@@ -18,7 +18,7 @@ const user = ({ users, selectUser, removeUser }) => {
                             {users.map((data, i) => {
                                 return (
                                     <tr key={i}>
-                                        <td style={{ padding: 0, color: Color.white,paddingLeft:10  }}>
+                                        <td style={{ padding: 0, color: Color.white,paddingLeft:10}}>
                                             {data.firstName || data.lastName ? <img
                                                 alt="..."
                                                 style={{ height: 35, width: 35, borderRadius: 50, marginRight: 15 }}
