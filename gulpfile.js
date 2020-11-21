@@ -1,6 +1,8 @@
 const gulp = require("gulp");
 const gap = require("gulp-append-prepend");
 
+gulp.task('build', gulp.series('clean'));
+
 gulp.task("licenses", async function () {
   // this is to add Creative Tim licenses in the production mode for the minified js
   gulp
@@ -70,10 +72,6 @@ gulp.task("licenses", async function () {
 */`)
     )
     .pipe(gulp.dest("./", { overwrite: true }));
-
-
-    gulp.task('default', ['styles', 'scripts', 'images', 'watch']);
-
 
   return;
 });
