@@ -1,10 +1,9 @@
-const gulp = require("gulp");
-const sass = require('gulp-sass');
- const gap = require("gulp-append-prepend");
+const { watch } = require('gulp')
+const del = require('delete')
 
- gulp.task('watch', function () {
-  gulp.watch('./app/*.scss', gulp.series('sass'));
-  gulp.watch('./app/js/**/*.js', gulp.series('js'));
-});
+function clean(cb) {
+  del(['dist/*.js'], cb)
+}
 
-gulp.task('default', gulp.series('sass', 'js', 'watch'));
+module.exports.default = watch('*.js', clean)
+
