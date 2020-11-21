@@ -56,7 +56,7 @@ class Tag extends Component {
     }
 
     render() {
-        let { search, tags, tag } = this.state;
+        let { search, tags } = this.state;
         return (
             <>
                 <AppBar history={this.props.history} />
