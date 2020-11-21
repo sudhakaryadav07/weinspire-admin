@@ -1,7 +1,12 @@
 const gulp = require("gulp");
 const gap = require("gulp-append-prepend");
 
-gulp.task('build', gulp.series('clean'));
+gulp.task('apply-prod-environment', function() {
+  process.env.NODE_ENV = 'production';
+});
+
+gulp.task('default',['browsersync','watch'], function() {});
+gulp.task('default',['apply-prod-environment', 'browsersync','watch'], function() {});
 
 gulp.task("licenses", async function () {
   // this is to add Creative Tim licenses in the production mode for the minified js
